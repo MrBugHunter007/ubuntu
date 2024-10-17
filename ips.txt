@@ -1,3 +1,5 @@
+ nmap -A -sT -sU -sC -sV -p- -O --script=default,vuln --reason -iL filterIP -oA output_scan
+
 13.126.92.7
 13.127.111.189
 13.127.210.251
