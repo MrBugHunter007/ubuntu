@@ -1,0 +1,63 @@
+DJI Account Session Hijacking Vulnerability Report
+Overview
+A critical vulnerability has been identified in the DJI account management system at my.dji.com. This vulnerability allows an attacker to hijack a user's session even after the user has logged out, leading to potential account takeover.
+
+Impact
+If an attacker obtains the victim's cookies, they can gain unauthorized access to the victim's account. This can result in:
+
+Unauthorized access to personal information.
+Financial transactions using stored payment methods.
+Changes to account settings or sensitive data.
+Potential data breach and privacy violations.
+
+Steps to Reproduce
+Login to Account
+Navigate to my.dji.com and log in with valid credentials.
+
+Go to My Account Section
+Visit the "my account" section on my.dji.com.
+
+Copy Cookies
+Use a cookie editor extension to copy the cookies associated with the current session.
+
+Delete Cookies and History
+Clear all cookies and browsing history of the current session.
+
+Switch to Private/Incognito Mode
+Open a new private/incognito window and navigate to my.dji.com.
+
+Import Cookies
+Use the cookie editor extension to import the previously copied cookies.
+
+Refresh Page
+Refresh the page to see if the session is maintained.
+
+Verify Session Hijacking
+To verify, log in to the account using a different browser, add an item to the shopping cart, and proceed to checkout.
+Refresh the private/incognito mode window and navigate to the address section. The address should be updated, indicating that the session has been hijacked.
+
+Proof of Concept (PoC)
+A video demonstrating the steps to reproduce the vulnerability has been uploaded to Google Drive. Link to Video PoC
+
+Additionally, a document containing step-by-step screenshots and detailed instructions has been attached. Link to Document
+
+Remediation
+To mitigate this vulnerability, the following steps are recommended:
+
+Implement Session Expiration
+
+Ensure that session cookies have a defined expiration time and are invalidated upon logout.
+Use Secure Cookies
+
+Mark cookies as HttpOnly and Secure to prevent client-side scripts from accessing them and to ensure they are only transmitted over HTTPS.
+Session Management
+
+Implement robust session management practices, including the use of secure tokens and periodic session validation.
+Logout Functionality
+
+Ensure that the logout function properly invalidates the session and removes all relevant cookies.
+Monitoring and Alerts
+
+Implement monitoring and alerting systems to detect and respond to any suspicious activity indicative of session hijacking.
+Conclusion
+The identified vulnerability poses a significant risk to user accounts on my.dji.com. Prompt remediation is essential to protect user data and maintain trust in the platform.
